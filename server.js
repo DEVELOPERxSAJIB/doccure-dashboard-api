@@ -11,8 +11,8 @@ import brandRouter from "./routes/brand.js";
 import tagRouter from "./routes/tag.js";
 import categoryRouter from "./routes/category.js";
 import productRouter from "./routes/product.js";
-import { errorHandler } from "./middlewares/errorhandler.js";
 import { mongoBDConnect } from "./config/db.js";
+import { errorHandler } from "./middlewares/errorhandler.js";
 
 // initialization
 const app = express();
@@ -20,11 +20,13 @@ dotenv.config();
 
 // set middlewares
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-  origin : `http://localhost:3000`,
-  credentials : true,
-}));
+app.use(express.urlencoded({ extended: false }));
+app.use(
+  cors({
+    origin: `http://localhost:3000`,
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 
 // set environment vars

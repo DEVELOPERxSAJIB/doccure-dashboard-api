@@ -12,7 +12,7 @@ import tagRouter from "./routes/tag.js";
 import categoryRouter from "./routes/category.js";
 import productRouter from "./routes/product.js";
 import { mongoBDConnect } from "./config/db.js";
-import { errorHandler } from "./middlewares/errorhandler.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
 
 // initialization
 const app = express();

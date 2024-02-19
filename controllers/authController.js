@@ -37,8 +37,8 @@ export const login = expressAsyncHandler(async (req, res) => {
   res
     .cookie("accessToken", token, {
       httpOnly: true,
-      secure: process.env.MODE == "Development" ? false : true,
-      sameSite: "strict",
+      secure: true,
+      sameSite: "none",
       maxAge: 1000 * 60 * 60 * 24 * 7,
     })
     .status(200)
